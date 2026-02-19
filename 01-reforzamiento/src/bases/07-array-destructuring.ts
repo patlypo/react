@@ -9,4 +9,17 @@ const returnArrayFn = () =>{
 
 const [letters, numbers] = returnArrayFn();
 
-console.log(numbers );
+console.log(numbers, letters );
+//primer valor un string, segundo una funcion
+const useState = (value:string)=>{
+    return [
+        value,
+        (newValue: string)=>{
+            console.log(newValue);
+        },
+    ] as const;
+};
+
+const [name, setName] = useState('Goku');
+console.log(name);       // Goku
+setName('Vegeta');       // Imprime "Vegeta"
