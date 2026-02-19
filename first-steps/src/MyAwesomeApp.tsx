@@ -16,8 +16,15 @@ export function MyAwesomeApp(){
         <p>{colores.join(', ')}</p>
 
 
-        <h1>{isActive}</h1>
-        <p>{JSON.stringify(address)}</p>
+        <h1>{isActive? 'Activo':'No activo'}</h1>
+
+        <p style={{ 
+            backgroundColor:'#645858',
+            borderRadius: isActive ? 10:20,
+            padding:10,
+        }}
+        >
+            {JSON.stringify(address)}</p>
         </>
-    )
-}
+    );
+};
