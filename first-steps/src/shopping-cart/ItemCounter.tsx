@@ -7,9 +7,9 @@ interface Props{
     quantity?:number;
 };
 
-export const ItemCounter = ({name, quantity}:Props) =>{
+export const ItemCounter = ({name, quantity = 1}:Props) =>{
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(quantity);
     
     
     const handleAdd = () => {
@@ -29,9 +29,9 @@ export const ItemCounter = ({name, quantity}:Props) =>{
         //     marginTop:9,
         // }}
         >
-            <span
+            <span className="item-text"
             style={{
-                width:100,
+                color: count == 0 ? 'red': 'white',
             }}
             >{name}</span>
             <button onClick={handleAdd}> +1 </button>
